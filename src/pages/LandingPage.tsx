@@ -6,6 +6,7 @@ import ServicesSection from "../components/ServicesSection"
 import WhyUsSection from "../components/WhyUsSection"
 import JoinSection from "../components/JoinSection"
 import ContactSection from "../components/ContactSection"
+import Footer from "../components/Footer"
 
 function LandingPage() {
   return (
@@ -17,6 +18,7 @@ function LandingPage() {
       <WhyUsSection />
       <JoinSection />
       <ContactSection />
+      <Footer />
       
       
       
