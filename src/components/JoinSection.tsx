@@ -1,4 +1,4 @@
-import { ArrowRight, Star, BookOpen } from 'lucide-react'
+import { ArrowRight, Star, BookOpen, MapPin } from 'lucide-react'
 
 const perks = [
   {
@@ -13,6 +13,10 @@ const perks = [
   },
 ]
 
+const MAP_EMBED =
+  'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d500!2d121.41472!3d14.135111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTTCsDA4JzA2LjQiTiAxMjHCsDI0JzUzLjAiRQ!5e0!3m2!1sen!2sph!4v1700000000000'
+const MAP_LINK = 'https://www.google.com/maps?q=14.135111,121.414722'
+
 export default function JoinSection() {
   return (
     <section
@@ -20,7 +24,6 @@ export default function JoinSection() {
       className="py-24 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #0d1f3c 0%, #122a52 50%, #0d1f3c 100%)' }}
     >
-      {/* Background accent circles */}
       <div
         className="absolute -right-32 top-1/2 -translate-y-1/2 w-80 h-80 rounded-full opacity-10"
         style={{ background: 'radial-gradient(circle, #22d3ee, transparent)' }}
@@ -68,9 +71,9 @@ export default function JoinSection() {
           </div>
 
           {/* Right — perks */}
-          <div className="space-y-5">
+          <div className="space-y-4">
             <div
-              className="glass-card rounded-2xl p-6 mb-6"
+              className="glass-card rounded-2xl p-5"
               style={{ border: '1px solid rgba(34,211,238,0.15)' }}
             >
               <p className="font-display text-lg uppercase text-white/70 tracking-wider">
@@ -105,27 +108,67 @@ export default function JoinSection() {
               )
             })}
 
-            {/* Visit us tag */}
+            {/* Interactive map block */}
             <div
-              className="rounded-2xl p-5 flex items-center gap-4 mt-2"
-              style={{
-                background: 'rgba(34,211,238,0.06)',
-                border: '1px solid rgba(34,211,238,0.2)'
-              }}
+              className="rounded-2xl overflow-hidden"
+              style={{ border: '1px solid rgba(34,211,238,0.2)' }}
             >
+              {/* Map header */}
               <div
-                className="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center"
-                style={{ background: '#22d3ee' }}
+                className="flex items-center justify-between px-4 py-3"
+                style={{ borderBottom: '0.5px solid rgba(34,211,238,0.12)', background: '#0d1f3c' }}
               >
-                <ArrowRight size={18} color="#0a1628" />
+                <div className="flex items-center gap-2">
+                  <MapPin size={13} style={{ color: '#22d3ee' }} />
+                  <span className="font-body text-xs font-medium text-white">
+                    Flavian Realty — Nagcarlan, Laguna
+                  </span>
+                </div>
+                <a
+                  href={MAP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-xs font-medium transition-opacity hover:opacity-70"
+                  style={{ color: '#22d3ee' }}
+                >
+                  Open in Maps ↗
+                </a>
               </div>
-              <div>
-                <p className="font-display text-sm uppercase text-white tracking-wider">VISIT US</p>
-                <p className="font-body text-white/50 text-xs">
-                  #72 C. Lirio St. Nagcarlan, Laguna · Besides Iglesia Ni Cristo
-                </p>
+
+              {/* Embedded map */}
+              <div className="relative w-full" style={{ height: '220px' }}>
+                <iframe
+                  src={MAP_EMBED}
+                  width="100%"
+                  height="220"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Flavian Realty Location"
+                />
+              </div>
+
+              {/* Address strip */}
+              <div
+                className="flex items-center justify-between px-4 py-3"
+                style={{ background: 'rgba(34,211,238,0.05)' }}
+              >
+                <div className="flex items-center gap-2">
+                  <MapPin size={12} style={{ color: '#22d3ee' }} />
+                  <span className="font-body text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    #72 C. Lirio St. Nagcarlan, Laguna · Besides Iglesia Ni Cristo
+                  </span>
+                </div>
+                <span
+                  className="font-body text-xs hidden sm:block"
+                  style={{ color: 'rgba(255,255,255,0.25)' }}
+                >
+                  14°08'06.4"N 121°24'53.0"E
+                </span>
               </div>
             </div>
+
           </div>
         </div>
       </div>
