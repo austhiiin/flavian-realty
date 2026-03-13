@@ -1,4 +1,5 @@
-import type { LucideIcon, ArrowRight } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface ServiceCardProps {
   icon: LucideIcon
@@ -65,6 +66,9 @@ export default function ServiceCard({ icon: Icon, title, description, index }: S
           style={{ color: '#22d3ee' }}
         >
           Inquire now
+
+          {/* Arrow */}
+          <ArrowRight size={18} className="transition-transform duration-300 group-hover:rotate-180" />
           
         </button>
       </div>
