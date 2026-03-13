@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection"
 import AboutSection from "../components/AboutSection"
 import ServicesSection from "../components/ServicesSection"
 import WhyUsSection from "../components/WhyUsSection"
+import JoinSection from "../components/JoinSection"
 
 function LandingPage() {
   return (
@@ -13,6 +14,7 @@ function LandingPage() {
       <AboutSection />
       <ServicesSection />
       <WhyUsSection />
+      <JoinSection />
       
       
     </>
