@@ -10,7 +10,6 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <h1 className="text-blue-500">Initialize TailwindCSS</h1>
     </>
   )
 }
